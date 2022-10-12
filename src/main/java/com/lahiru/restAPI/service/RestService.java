@@ -14,4 +14,7 @@ public RestModel addBLMethod(RestModel restModel){
 return restRepository.save(restModel);
 }
 
+    public Iterable<RestModel> findAll() {
+    return restRepository.findAll();
+    }
 }

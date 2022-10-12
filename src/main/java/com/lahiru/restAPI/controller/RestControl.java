@@ -18,11 +18,12 @@ public class RestControl {
         return restService.addBLMethod(restModel);
     }
     @GetMapping("/all")
-    public void finAllRecord(){
-
+    public Iterable<RestModel> finAllRecord(){
+        return restService.findAll();
     }
     @GetMapping("/find/{id}")
     public void findById(){
+
 
     }
 
