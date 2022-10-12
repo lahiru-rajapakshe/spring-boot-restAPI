@@ -3,6 +3,8 @@ package com.lahiru.restAPI.controller;
 import com.lahiru.restAPI.model.RestModel;
 import com.lahiru.restAPI.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,7 +31,10 @@ public class RestControl {
     }
 
     @DeleteMapping ("/delete/{id}")
-    public void removeById(){
+    public ResponseEntity<?> removeById(@PathVariable Integer id){
+        RestModel rm = restService.findById(id);
+        restService.delete(rm);
+        return  new ResponseEntity<String>("Deleted ", HttpStatus.OK);
 
     }
 }

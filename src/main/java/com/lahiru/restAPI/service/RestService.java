@@ -22,4 +22,8 @@ return restRepository.save(restModel);
 return  restRepository.getById(id);
 
     }
+
+    public void delete(RestModel rm) {
+    restRepository.delete(rm);
+    }
 }
