@@ -1,6 +1,7 @@
 package com.lahiru.restAPI.controller;
 
 import com.lahiru.restAPI.model.RestModel;
+import com.lahiru.restAPI.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 public class RestControl {
 
     @Autowired
-    private RestModel restModel;
+    private RestService restService;
 
     @PostMapping("/add")
     public RestModel addOrUpdateRecord(@RequestBody RestModel restModel){
 
-        return restModel.addBLMethod(restModel);
+        return restService.addBLMethod(restModel);
     }
     @GetMapping("/all")
     public void finAllRecord(){
