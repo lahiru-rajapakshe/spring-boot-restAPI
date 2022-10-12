@@ -17,4 +17,9 @@ return restRepository.save(restModel);
     public Iterable<RestModel> findAll() {
     return restRepository.findAll();
     }
+
+    public RestModel findById(Integer id) {
+return  restRepository.getById(id);
+
+    }
 }

@@ -22,7 +22,8 @@ public class RestControl {
         return restService.findAll();
     }
     @GetMapping("/find/{id}")
-    public void findById(){
+    public RestModel findById(@PathVariable Integer id){
+        return restService.findById(id);
 
 
     }
